@@ -11,7 +11,9 @@
 		<p>repo on github: <a href="http://jkudi.sh/yvrwpmeetup" target="_blank">jkudi.sh/yvrwpmeetup</a></p>
 	</footer>
 </div>
+
 <hr>
+
 <div>
 	<h1 class="alt3">Me</h1>
 	<ul>
@@ -22,7 +24,9 @@
 		<li>#VIPWorkshop, sharing back some of the knowledge</li>
 	</ul>
 </div>
+
 <hr>
+
 <div>
 	<h2 class="bigger">Developping with WordPress</h2>
 	<h2 class="alt2">What does it mean?</h2>
@@ -32,7 +36,9 @@
 		<li>Plugin Development</li>
 	</ul>
 </div>
+
 <hr>
+
 <div>
 	<h2 class="bigger alt2">What goes in it?</h1>
 	<ul>
@@ -42,27 +48,41 @@
 		<li class="alt1">PHP</li>
 	</ul>
 </div>
+
 <hr>
+
 <div>
 	<br><br>
 	<h1 class="alt1">Let's focus on PHP</h1>
 </div>
+
 <hr>
+
 <div>
 	<br>
 	<h1 class="alt3">Don't hack core</h1>
 	<br>
-	<h2 class="alt2">Use action & filter hooks</h2>
+	<ul>
+		<li>Write functionality into your own custom theme (or a child theme)</li>
+		<li>Use & write plugins</li>
+		<li>Use mu-plugins</li>
+		<li>Use action & filter hooks</li>
+		<li>Submit tickets & patches: <a href="https://core.trac.wordpress.org/" target="_blank">core.trac.wordpress.org</a></li>
+	</ul>
 </div>
+
 <hr>
+
 <div>
 	<h1>Actions</h1>
-	<h2>Actions allow you to execute arbitrary code at a specific point during WordPress core execution</h2>
+	<h2>Actions allow you to run arbitrary code at a specific point during WordPress core execution</h2>
 	<br>
 	<p class="aligncenter">Somewhere in core: <br><br><code>do_action( 'wp_head' );</code></p><br>
 	<p class="aligncenter">In your code: <br><br><code>add_action( 'wp_head', 'jkudish_function' );</code></p>
 </div>
+
 <hr>
+
 <div>
 	<h1>Filters</h1>
 	<h2>Filters allow you to modify a variable (before it's output, saved, used, whatever...)</h2>
@@ -70,7 +90,9 @@
 	<p class="aligncenter">In your code: <br><br><code>add_filter( 'the_content', 'jkudish_filter' );</code></p>
 	<p class="aligncenter">In your code: <br><br><code>function jkudish_filter( $post_content ) { ... }</code></p>
 </div>
+
 <hr>
+
 <div>
 	<h1>Hooks in-depth</h1>
 	<ul>
@@ -81,7 +103,9 @@
 		</li>
 	</ul>
 </div>
+
 <hr>
+
 <div>
 	<h1 class="alt2">Registering Hooks</h1>
 	<ul>
@@ -96,7 +120,9 @@
 		</li>
 	</ul>
 </div>
+
 <hr>
+
 <div>
 	<h1 class="alt1">Finding Hooks & more</h1>
 	<ul>
@@ -104,9 +130,12 @@
 		<li>Adam Brown's Hook Database <small><a href="http://adambrown.info/p/wp_hooks" target="_blank">adambrown.info/p/wp_hooks</a></small></li>
 		<li>WP Candy Article on hooks <small><a href="http://wpcandy.com/teaches/how-to-use-wordpress-hooks" target="_blank">wpcandy.com/teaches/how-to-use-wordpress-hooks</a></small></li>
 		<li>Search through core</li>
+		<li><code>add_action( 'all', create_function( '', 'var_dump( current_filter() );' ) );</code></li>
 	</ul>
 </div>
+
 <hr>
+
 <div>
 	<br>
 	<h1 class="alt3">Code is Poetry</h1>
@@ -115,12 +144,16 @@
 	<br>
 	<p><small>* Codex link: <small><a href="http://codex.wordpress.org/WordPress_Coding_Standards" target="_blank">codex.wordpress.org/WordPress_Coding_Standards</a></small></small></p>
 </div>
+
 <hr>
+
 <div>
 	<br><br>
 	<h1><code>&lt;?php</code> vs. <code>&lt;?</code></h1>
 </div>
+
 <hr>
+
 <div>
 	<h2 class="bigger">Single quotes unless you need to evaluate a variable</h2>
 	<p>
@@ -135,7 +168,9 @@
 		</code>
 	</p>
 </div>
+
 <hr>
+
 <div>
 	<h2 class="bigger alt1">Underscore your vars</h2>
 	<br>
@@ -144,7 +179,9 @@
 	<p>even worst: <code>$MygreatVariable</code></p><br>
 	<p>just stupid: <code>$mygReAtvariAble</code></p>
 </div>
+
 <hr>
+
 <div>
 	<h2 class="bigger alt3">Capitalize your class names</h2>
 	<p>
@@ -153,7 +190,9 @@
 		acronyms always upper case: <br><br><code>class WP_HTTP</code><br>
 	</p>
 </div>
+
 <hr>
+
 <div>
 	<h2 class="bigger alt2">Spacing for legibility</h2>
 	<p>correct: <code>foreach ( $posts as $post )</code></p><br>
@@ -161,7 +200,9 @@
 	<p>even worst: <code>for($i<5;$i=0;$i++)</code></p><br>
 	<p>just stupid:<br><br> <code>if($coDeisineLigible){$youcantReadthis=true;}</code></p>
 </div>
+
 <hr>
+
 <div>
 	<h2>Brackets, indentation + empty lines are your friend</h2>
 	<br>
@@ -174,14 +215,18 @@
 	<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;echo 'not a page or post';</p>
 	<p class="code">}</p>
 </div>
+
 <hr>
+
 <div>
 	<h1>Yoda Conditions</h1>
 	<h2><small>What happens if you accidentally forget an '=' ?</small></h2>
 	<br>
 	<p class="aligncenter"><code>'Vancouver' == $city</code> <br><br>vs.<br><br> <code>$city == 'Vancouver'</code></p>
 </div>
+
 <hr>
+
 <div>
 	<h1 class="alt1">Don't get too clever</h1>
 	<br>
@@ -192,41 +237,214 @@
   &nbsp;&nbsp;$var = some_function();
   </code></p>
 </div>
+
 <hr>
+
 <div>
-
+	<br><br><br><br>
+	<h1 class="alt2">Beyond the standards</h1>
 </div>
+
 <hr>
+
 <div>
-
+	<br><br>
+	<h1>Sanitize data before saving it to the database</h1>
 </div>
+
 <hr>
+
 <div>
-
+	<h1 class="alt3">Always use $wpdb*</h1>
+	<p>$wpdb->escape: <br><br>
+		<code>$data = $wpdb->escape( $_POST['data'] );</code>
+	</p>
+	<p>$wpdb->prepare: <br><br>
+		<code>$sql = $wpdb->prepare(
+		<br>"INSERT INTO $wpdb->postmeta (post_id, meta_key, meta_value) VALUES (%d, %s, %s) "
+		<br>, 10, $meta_key, $meta_value );</code>
+	</p>
+	<p><small>* Visit: <a href="http://codex.wordpress.org/Class_Reference/wpdb" target="_blank">codex.wordpress.org/Class_Reference/wpdb</a></small></p>
 </div>
+
 <hr>
+
 <div>
-
+	<br><br>
+	<h1 class="alt2">Escape data before outputting it to the browser</h1>
 </div>
+
 <hr>
+
 <div>
-
+	<h2 class="alt1">Use the right function for the situation</h2>
+	<ul>
+		<li><code>esc_attr()</code>: escape an html attribute</li>
+		<li><code>intval()</code>: make sure the value is an integer</li>
+		<li><code>wp_kses()</code>: strip unwanted html tags</li>
+		<li><code>esc_html()</code>: encodes html so it can be output as text</li>
+		<li><code>esc_textarea()</code>: encodes text to be used inside a textarea</li>
+		<li><code>esc_js()</code>: encodes javascript</li>
+		<li><code>esc_url()</code>: encodes and validates URLs</li>
+		<li>Full list at: <a href="http://codex.wordpress.org/Data_Validation">codex.wordpress.org/Data_Validation</a> or in wp-includes/formatting.php</li>
+	</ul>
 </div>
+
 <hr>
+
 <div>
-
-INTERNATIONALIZATION
-http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
-
+	<br><br><br><br>
+	<h1 class="alt1">Make your code play nice with others</h1>
 </div>
+
 <hr>
+
+<div>
+	<h1 class="alt2">Prefix or namespace your code</h1>
+	<br><br>
+	<h2><code>jkudish_get_beers();</code></h2>
+	<br><br>
+	<h2><code>class Jkudish_Beers { [...] }</code></h2>
+</div>
+
+<hr>
+
+<div>
+	<h1 class="alt3">Make it extendable; use hooks!</h1>
+	<br><br>
+	<p class="aligncenter"><code>do_action( 'jkudish_did_beers' );</code></p>
+	<br><br>
+	<p class="aligncenter"><code>$beers = apply_filters( 'jkudish_beers', $beers, $breweries );</code></p>
+</div>
+
+<hr>
+
+<div>
+	<h1 class="alt2">Internationalize the code</h1>
+	<br><br>
+	<h2 class="alt1">Allow others to translate your theme/plugin/site.</h2>
+	<h2>Otto teaches you everything you need to know*</h2>
+	<br>
+	<p><small>* Go to: <a href="http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/" target="_blank">ottopress.com/2012/internationalization-youre-probably-doing-it-wrong</a></small></p>
+</div>
+
+<hr>
+
+<div>
+	<br><br><br><br>
+	<h1 class="alt3">Debugging your code</h1>
+</div>
+
+<hr>
+
+<div>
+	<h1>Use WP_DEBUG</h1>
+	<br><br>
+	<h2 class="bigger">In <samp>wp-config.php</samp>, add:</h2>
+	<br><h2><code>define('WP_DEBUG', true);</code></h2>
+</div>
+
+<hr>
+
+<div>
+	<h1 class="alt2">More handy constants</h1>
+	<br><h2><code>define('WP_DEBUG_LOG', true);</code></h2>
+	<br><h2><code>define('WP_DEBUG_DISPLAY', true);</code></h2>
+	<br><h2><code>define('SAVE_QUERIES', true);</code></h2>
+	<br><h2><code>define('SCRIPT_DEBUG', true);</code></h2>
+</div>
+
+<hr>
+
+<div>
+	<h2 class="bigger">Debug Bar</h1>
+	<img src="slides/images/debug-bar.jpg" alt="Debug Bar">
+	<p class="aligncenter"><a href="http://wordpress.org/extend/plugins/debug-bar/" target="_blank">wordpress.org/extend/plugins/debug-bar/</a></p>
+</div>
+
+<hr>
+
+<div>
+	<h2 class="bigger alt1">Debug Bar Add-Ons</h2>
+	<ul>
+		<li>Debug Bar Extender: <a href="http://wordpress.org/extend/plugins/debug-bar-extender/" target="_blank">wordpress.org/extend/plugins/debug-bar-extender</a></li>
+		<li>Debug Bar Console: <a href="http://wordpress.org/extend/plugins/debug-bar-console/" target="_blank">wordpress.org/extend/plugins/debug-bar-console</a></li>
+		<li>Debug Bar Query Tracer: <a href="http://wordpress.org/extend/plugins/debug-bar-query-tracer/" target="_blank">wordpress.org/extend/plugins/debug-bar-query-tracer</a></li>
+		<li>Debug Bar Cron: <a href="http://wordpress.org/extend/plugins/debug-bar-cron/" target="_blank">wordpress.org/extend/plugins/debug-bar-cron</a></li>
+	</ul>
+	<img src="slides/images/debug-console.jpg" alt="Debug Bar Console">
+</div>
+
+<hr>
+
+<div>
+	<h2 class="bigger alt4">Log Deprecated Notices</h2>
+	<img src="slides/images/deprecated-calls.jpg" alt="Deprecated Calls">
+	<p class="aligncenter"><a href="http://wordpress.org/extend/plugins/log-deprecated-notices/" target="_blank">wordpress.org/extend/plugins/log-deprecated-notices</a></p>
+</div>
+
+<hr>
+
+<div>
+	<h2 class="bigger alt1">Log Deprecated Notices Extender</h2>
+	<img src="slides/images/log-deprecated-notices-extender.jpg" alt="Log Deprecated Notices Extender">
+	<p class="aligncenter"><a href="http://wordpress.org/extend/plugins/log-deprecated-notices-extender/" target="_blank">wordpress.org/extend/plugins/log-deprecated-notices-extender</a></p>
+</div>
+
+<hr>
+
+<div>
+	<h2 class="bigger alt2">Theme Check</h1>
+	<img src="slides/images/theme-check.jpg" alt="Theme Check">
+	<p class="aligncenter"><a href="http://wordpress.org/extend/plugins/theme-check/" target="_blank">wordpress.org/extend/plugins/theme-check</a></p>
+</div>
+
+<hr>
+
+<div>
+	<h2 class="bigger">VIP Scanner</h1>
+	<img src="slides/images/vip-scanner.jpg" alt="VIP Scanner">
+	<p class="aligncenter"><a href="http://wordpress.org/extend/plugins/vip-scanner/" target="_blank">wordpress.org/extend/plugins/theme-check</a></p>
+</div>
+
+<hr>
+
+<div>
+	<h2 class="bigger alt2">Debugging best practices</h2>
+	<br>
+	<ul>
+		<li class="alt3">Debug as you go</li>
+		<li class="alt3">Use real & edge-case data</li>
+		<li class="alt3">"Debugging is breaking" &mdash; Lance Willet </li>
+		<li class="alt3">Don't output errors on production</li>
+		<li class="alt3">Monitor error logs in production</li>
+	</ul>
+</div>
+
+<hr>
+
+<div>
+	<br>
+	<h1 class="alt1">Lessons Learned</h1>
+	<br>
+	<ul>
+		<li>Don't hack core</li>
+		<li>Use the right tool for the job (plugin, theme, mu-plugins, hooks, filters)</li>
+		<li>Write good, readable, error-free, secure code</li>
+		<li>Debug like a master</li>
+	</ul>
+</div>
+
+<hr>
+
 <div class="slide-layout-title">
 	<h1>Q&A</h1>
 	<h2>&mdash; Thank you!</h2>
+	<br><br>
 	<footer class="final-foot">
 		<p>presentation by <a href="http://jkudish.com" target="_blank">Joachim Kudish - jkudish.com</a></p>
 		<p>(I go by <em>Joey</em>) | <a href="http://twitter.com/jkudish" target="_blank">@jkudish</a> on twitter</p>
-		<p>slides at <a href="http://jkudish.com/wcsd" target="_blank">jkudish.com/wcsd</a></p>
-		<p>repo on github: <a href="http://jkudi.sh/wcsd2012" target="_blank">jkudi.sh/wcsd2012</a></p>
+		<p>slides at <a href="http://jkudish.com/yvrwpmeetup" target="_blank">jkudish.com/yvrwpmeetup</a></p>
+		<p>repo on github: <a href="http://jkudi.sh/yvrwpmeetup" target="_blank">jkudi.sh/yvrwpmeetup</a></p>
 	</footer>
 </div>
