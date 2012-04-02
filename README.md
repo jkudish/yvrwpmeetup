@@ -1,4 +1,4 @@
-This git repository is slides for my [talk on developpint and debugging with WordPress at the Vancouver WordPress meetup](http://www.meetup.com/Vancouver-WordPress-Meetup-Group/events/56494732/).
+This git repository is slides for my talk on developping and debugging with WordPress at the [Vancouver WordPress meetup](http://www.meetup.com/Vancouver-WordPress-Meetup-Group/events/56494732/).
 
 With a very low barrier to entry, developing with WordPress has become particularly popular in the past few years. However, this sometimes means that standards and best practices aren't well respected. The aim of this talk is to (re)introduce developers to some of WordPress' coding standards and general best practices, as well provide you with tools to become a better developer. This will be a resourceful presentation for anyone beginning/interested in/or even long-time developing with WordPress.
 
