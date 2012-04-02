@@ -1,0 +1,133 @@
+/*
+	Modified Copyright (c) 2012 Joachim Kudish
+	Original Copyright (c) 2011 Brian Cavalier
+	LICENSE: see the license.txt file
+*/
+
+@import "../basic.css";
+
+.slide-view-module {
+	margin-top: 1em;
+}
+
+.slide {
+	font-size: 250%;
+}
+
+.slide h1 {
+	font-size: 4em;
+	font-weight: bold;
+	color: #B58900;
+	margin-bottom: 0;
+	letter-spacing: -.08em;
+	text-rendering: optimizeLegibility;
+}
+
+.slide h1.smaller {
+	font-size: 2em;
+	margin-bottom: 0.5em;
+}
+
+.slide h2 {
+	color: #268bd2;
+	margin-top: 0;
+	margin-left: .5em;
+}
+
+.slide h2.bigger {
+	font-size: 200%;
+}
+
+
+.slide *.alt1 {
+	color: #d33682;
+}
+
+.slide *.alt2 {
+	color: #859900;
+}
+
+.slide *.alt3 {
+	color: #268bd2;
+}
+
+.slide *.alt4 {
+	color: #B58900;;
+}
+
+.slide p {
+	color: #657B83;
+	margin-left: 2em;
+	margin-bottom: 0.7em;
+}
+
+.slide em, .slide a {
+	color: #586E75;
+}
+
+.slide small {
+	font-size: 70%;
+}
+
+.slide ul > ul {
+	font-size: 90%;
+}
+
+.slide li {
+	line-height: 1em;
+	margin-bottom: .75em;
+	font-size: 1em;
+}
+
+.slide li.larger {
+	line-height: 1em;
+	margin-bottom: .75em;
+	font-size: 1.2em;
+}
+
+.slide .slide-layout-title {
+	padding-top: 2em;
+}
+
+.slide * code {
+	color: #fdf6e3!important;
+	background: #042029;
+	padding: 0.2em;
+}
+
+.slide .space {
+	margin: 1em;
+	clear: both;
+}
+
+#smaller-ps p {
+	margin-bottom: 0;
+}
+
+@media screen and (max-device-width: 480px) {
+	.slide-view-module {
+		margin-top: 2em;
+	}
+
+	.slide {
+		font-size: 90%;
+	}
+
+	.slide .slide-layout-title {
+		padding-top: 0;
+	}
+
+	.slide p {
+		font-size: 1.25em;
+		margin-left: .25em;
+	}
+
+	.slide h2 {
+		margin-left: .25em;
+	}
+
+	.slide li {
+		font-size: 1.25em;
+	}
+
+}
