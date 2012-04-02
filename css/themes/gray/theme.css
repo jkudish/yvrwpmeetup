@@ -12,6 +12,7 @@
 
 .slide {
 	font-size: 250%;
+	text-align: center;;
 }
 
 .slide h1 {
@@ -38,6 +39,10 @@
 	font-size: 200%;
 }
 
+.slide h2.really-bigger {
+	font-size: 250%;
+}
+
 
 .slide *.alt1 {
 	color: #d33682;
@@ -59,6 +64,11 @@
 	color: #657B83;
 	margin-left: 2em;
 	margin-bottom: 0.7em;
+	text-align: left;
+}
+
+.slide p.aligncenter, .slide .aligncenter {
+	text-align: center;
 }
 
 .slide em, .slide a {
@@ -74,9 +84,10 @@
 }
 
 .slide li {
-	line-height: 1em;
+	line-height: 1.6em;
 	margin-bottom: .75em;
 	font-size: 1em;
+	text-align: left;
 }
 
 .slide li.larger {
@@ -93,7 +104,14 @@
 	color: #fdf6e3!important;
 	background: #042029;
 	padding: 0.2em;
+	font-size: 1.2em;
 }
+
+.slide p.code {
+	font-weight: bold;
+	color: #042029;
+}
+
 
 .slide .space {
 	margin: 1em;

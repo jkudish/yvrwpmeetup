@@ -1,7 +1,7 @@
 <div class="slide-layout-title">
 	<h1>WordPress Development</h1>
 	<h2>Best Practices & Debugging Techniques</h2>
-	<div style="margin-top: 3em"></div>
+	<div style="margin-top: 2.5em"></div>
 	<footer>
 		<!-- <p class="slide-no-touch">Use <em>left/right arrows</em> to move between slides</p> -->
 		<!-- <p class="slide-touch"><em>Swipe left or right</em> to move between slides</p> -->
@@ -13,6 +13,210 @@
 </div>
 <hr>
 <div>
+	<h1 class="alt3">Me</h1>
+	<ul>
+		<li>WordPress Developer</li>
+		<li class="alt3">Consultant/Freelancer</li>
+		<li>Large scale & complex installations</li>
+		<li class="alt3">Plugin development</li>
+		<li>#VIPWorkshop, sharing back some of the knowledge</li>
+	</ul>
+</div>
+<hr>
+<div>
+	<h2 class="bigger">Developping with WordPress</h2>
+	<h2 class="alt2">What does it mean?</h2>
+	<ul>
+		<li>Building sites</li>
+		<li>Theme Development</li>
+		<li>Plugin Development</li>
+	</ul>
+</div>
+<hr>
+<div>
+	<h2 class="bigger alt2">What goes in it?</h1>
+	<ul>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>Javascript</li>
+		<li class="alt1">PHP</li>
+	</ul>
+</div>
+<hr>
+<div>
+	<br><br>
+	<h1 class="alt1">Let's focus on PHP</h1>
+</div>
+<hr>
+<div>
+	<br>
+	<h1 class="alt3">Don't hack core</h1>
+	<br>
+	<h2 class="alt2">Use action & filter hooks</h2>
+</div>
+<hr>
+<div>
+	<h1>Actions</h1>
+	<h2>Actions allow you to execute arbitrary code at a specific point during WordPress core execution</h2>
+	<br>
+	<p class="aligncenter">Somewhere in core: <br><br><code>do_action( 'wp_head' );</code></p><br>
+	<p class="aligncenter">In your code: <br><br><code>add_action( 'wp_head', 'jkudish_function' );</code></p>
+</div>
+<hr>
+<div>
+	<h1>Filters</h1>
+	<h2>Filters allow you to modify a variable (before it's output, saved, used, whatever...)</h2>
+	<p class="aligncenter">Somewhere in core: <br><br><code>apply_filters( 'the_content', $post_content );</code></p><br>
+	<p class="aligncenter">In your code: <br><br><code>add_filter( 'the_content', 'jkudish_filter' );</code></p>
+	<p class="aligncenter">In your code: <br><br><code>function jkudish_filter( $post_content ) { ... }</code></p>
+</div>
+<hr>
+<div>
+	<h1>Hooks in-depth</h1>
+	<ul>
+		<li>Filters and actions are essentially the same</li>
+		<li>Hooks take several arguments: <br>
+			<code>apply_filters( 'the_filter', $value, $addtl_arg1, $addtl_arg2 [...] );</code><br><br>
+			<code>do_action( 'the_action', $addtl_arg1, $addtl_arg2 [...] );</code>
+		</li>
+	</ul>
+</div>
+<hr>
+<div>
+	<h1 class="alt2">Registering Hooks</h1>
+	<ul>
+		<li>Filters: <br>
+			<code>add_filter( 'the_filter', 'callback_func', $priority = 10, $additional_args = 0 );</code>
+		</li>
+		<li>Actions: <br>
+			<code>add_action( 'the_action', 'callback_func', $priority = 10, $additional_args = 0 );</code>
+		</li>
+		<li>Callback function: <br>
+			<code>function callback_func($value, $addtl_arg1, $addtl_arg2 [...]) { [...] }</code>
+		</li>
+	</ul>
+</div>
+<hr>
+<div>
+	<h1 class="alt1">Finding Hooks & more</h1>
+	<ul>
+		<li>Plugin API on the Codex: <small><a href="http://codex.wordpress.org/Plugin_API" target="_blank">codex.wordpress.org/Plugin_API</a></small></li>
+		<li>Adam Brown's Hook Database <small><a href="http://adambrown.info/p/wp_hooks" target="_blank">adambrown.info/p/wp_hooks</a></small></li>
+		<li>WP Candy Article on hooks <small><a href="http://wpcandy.com/teaches/how-to-use-wordpress-hooks" target="_blank">wpcandy.com/teaches/how-to-use-wordpress-hooks</a></small></li>
+		<li>Search through core</li>
+	</ul>
+</div>
+<hr>
+<div>
+	<br>
+	<h1 class="alt3">Code is Poetry</h1>
+	<br>
+	<h2 class="alt2">Make things legible, classy & elegant; Follow the WP Coding Standards*</h2>
+	<br>
+	<p><small>* Codex link: <small><a href="http://codex.wordpress.org/WordPress_Coding_Standards" target="_blank">codex.wordpress.org/WordPress_Coding_Standards</a></small></small></p>
+</div>
+<hr>
+<div>
+	<br><br>
+	<h1><code>&lt;?php</code> vs. <code>&lt;?</code></h1>
+</div>
+<hr>
+<div>
+	<h2 class="bigger">Single quotes unless you need to evaluate a variable</h2>
+	<p>
+		<br>
+		<code>&lt;?php echo 'a great string'; ?&gt;</code>
+		<br><br>
+		<code>
+			&lt;?php <br>
+				$dog_name = 'Winston'; <br>
+		 		echo "my dog's name is: $dog_name"; <br>
+		 	?&gt;
+		</code>
+	</p>
+</div>
+<hr>
+<div>
+	<h2 class="bigger alt1">Underscore your vars</h2>
+	<br>
+	<p>correct: <code>$my_great_variable</code></p><br>
+	<p>not so much: <code>$myGreatVariable</code></p><br>
+	<p>even worst: <code>$MygreatVariable</code></p><br>
+	<p>just stupid: <code>$mygReAtvariAble</code></p>
+</div>
+<hr>
+<div>
+	<h2 class="bigger alt3">Capitalize your class names</h2>
+	<p>
+		correct: <br><br><code>class Walker_Category extends Walker</code><br><br>
+		not so much: <br><br><code>class walkerCategory</code><br><br>
+		acronyms always upper case: <br><br><code>class WP_HTTP</code><br>
+	</p>
+</div>
+<hr>
+<div>
+	<h2 class="bigger alt2">Spacing for legibility</h2>
+	<p>correct: <code>foreach ( $posts as $post )</code></p><br>
+	<p>not so much: <code>foreach($posts as $post)</code></p><br>
+	<p>even worst: <code>for($i<5;$i=0;$i++)</code></p><br>
+	<p>just stupid:<br><br> <code>if($coDeisineLigible){$youcantReadthis=true;}</code></p>
+</div>
+<hr>
+<div>
+	<h2>Brackets, indentation + empty lines are your friend</h2>
+	<br>
+	<p class="code">if ( is_page() ) {</p>
+	<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;echo 'this is a page';</p>
+	<p class="code">} elseif ( is_single() ) {</p>
+	<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;echo 'this is a post';
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;echo '&lt;br&gt;how wonderful!';</p>
+	<p class="code">} else {</p>
+	<p class="code">&nbsp;&nbsp;&nbsp;&nbsp;echo 'not a page or post';</p>
+	<p class="code">}</p>
+</div>
+<hr>
+<div>
+	<h1>Yoda Conditions</h1>
+	<h2><small>What happens if you accidentally forget an '=' ?</small></h2>
+	<br>
+	<p class="aligncenter"><code>'Vancouver' == $city</code> <br><br>vs.<br><br> <code>$city == 'Vancouver'</code></p>
+</div>
+<hr>
+<div>
+	<h1 class="alt1">Don't get too clever</h1>
+	<br>
+	<p>Clever, but do you know what it does? <br><br><code>isset( $var ) || $var = some_function();</code></p>
+	<p>Easier to read: <br><br>
+	<code>
+	if ( ! isset( $var ) ) <br>
+  &nbsp;&nbsp;$var = some_function();
+  </code></p>
+</div>
+<hr>
+<div>
+
+</div>
+<hr>
+<div>
+
+</div>
+<hr>
+<div>
+
+</div>
+<hr>
+<div>
+
+</div>
+<hr>
+<div>
+
+</div>
+<hr>
+<div>
+
+INTERNATIONALIZATION
+http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
 
 </div>
 <hr>
